@@ -39,6 +39,7 @@
 }
 
 .header__logo {
+  text-transform: uppercase;
   margin: clamp(120px, 2.2em, 136px) auto 20px;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
@@ -78,6 +79,7 @@ button {
   padding: 0;
   text-transform: uppercase;
   background-color: transparent;
+  transition: transform 0.3s ease;
 }
 
 .theme-menu__button:hover {
@@ -104,20 +106,19 @@ button {
 }
 
 .theme-menu__button:focus-visible::after {
-  transition: transform 0.3s ease;
   transform: scaleX(1);
 }
 
 .theme-menu__button:disabled {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
   pointer-events: none;
 }
 
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  left: -24px;
+  left: -20px;
+  top: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -146,14 +147,14 @@ button {
 
 .card__img-container {
   position: relative;
+  border-block: 2px solid var(--accent-color, #000);
 }
 
 .card__img {
-  position: relative;
-  z-index: 1;
-  background-size: cover;
+  display: block;
   inline-size: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .card__label {
@@ -203,6 +204,7 @@ button {
   background-color: transparent;
   block-size: 39px;
   inline-size: 42px;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
@@ -211,7 +213,6 @@ button {
 
 .card__icon-button:focus-visible {
   border: 2px solid var(--accent-color, #000);
-  transition: border 0.3s ease;
 }
 
 .saturate {
@@ -259,17 +260,17 @@ button {
   block-size: 39px;
 }
 
-.card__like-button, .footer__button, .dialog__button {
+.button {
   position: relative;
-}
-
-.card__like-button:focus, .footer__button:focus, .dialog__button:focus {
-  box-shadow: 2px 2px 0 var(--accent-color, #000);
-  outline: none;
   transition: box-shadow 0.3s ease;
 }
 
-.card__like-button::after, .footer__button::after, .dialog__button::after {
+.button:focus {
+  box-shadow: 2px 2px 0 var(--accent-color, #000);
+  outline: none;
+}
+
+.button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -283,7 +284,7 @@ button {
   mix-blend-mode: difference;
 }
 
-.card__like-button:hover::after, .footer__button:hover::after, .dialog__button:hover::after {
+.button:hover::after {
   transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
 }
@@ -342,8 +343,7 @@ dialog:not([open]) {
 }
 
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
+  background-color: rgb(0 0 0 / 0.75);
 }
 
 .dialog-form {
@@ -373,49 +373,38 @@ dialog::backdrop {
 .dialog__button {
   margin: 0 0 32px;
   border: 2px solid var(--accent-color, #000);
-  padding: 9px 0;
+  padding: 9px 17px;
   line-height: 90%;
   text-transform: uppercase;
   background-color: transparent;
   inline-size: 82%;
+  min-inline-size: 257px;
+  min-block-size: 38px;
+  position: relative;
+  cursor: pointer;
 }
 
-@media (width <=375px) {
-  .content-section {
-    inline-size: 100vw;
+@media (min-width: 768px) {
+
+  :root {
+    --content-inline-size: clamp(43.75rem, 52.8571rem + -10.119vw, 100%);
+  }
+
+  .section-save__button {
+    --section-save-button-direction: row;
   }
 }
 
-@media (width <=375px) {
-  .header__theme-menu {
-    margin-inline-start: 10.5px;
+@media only screen and (orientation: landscape) {
+
+  .page {
+    background-size: auto 100%;
   }
 }
 
-@media (width <=375px) {
-  .main {
-    gap: 50px;
-  }
-}
-
-@media (width <=375px) {
-  .footer {
-    margin-block-end: 102px;
-  }
-}
-
-@media (width <=375px) {
-  .footer__button {
-    grid-template-columns: 100%;
-    grid-template-rows: 28px 1fr;
-    justify-items: center;
-    block-size: 80px;
-  }
-}
-
-@media (width <=375px) {
-  .footer__button-img {
-    width: 28px;
-    height: 28px;
+@media only screen and (orientation: portrait) {
+  
+  .page {
+    background-size: 100% auto;
   }
 }

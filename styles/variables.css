@@ -4,6 +4,7 @@
     --accent-font: PressStart2P;
     --main-wght: 400;
     --h-wght: 700;
+    --content-inline-size: 100%;
     --bg-color: #fff;
     --accent-color: #000;
     --sc-wdth: clamp(375px, 48vw, 796px);

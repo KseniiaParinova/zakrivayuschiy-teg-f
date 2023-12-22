@@ -96,12 +96,12 @@
   @media (prefers-reduced-motion: no-preference) {
     .like-icon.is-liked .heart {
       transform-origin: center;
-      animation: scale 0.3s ease-in 0.1s 2 alternate;
+      animation: like-scale .3s ease-in .1s alternate;
     }
   }
   
   @media (prefers-reduced-motion: no-preference) {
     .like-icon.is-liked .sparks {
-      animation: sparks-opacity 0.3s ease-in 0.3s 2 alternate;
+      animation: like .3s ease-in .3s alternate;
     }
 }
