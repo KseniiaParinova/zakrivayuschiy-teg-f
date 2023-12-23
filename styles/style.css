@@ -62,8 +62,10 @@
   inline-size: var(--sc-wdth, clamp(375px, 48vw, 796px));
 }
 
-button {
+.button {
   cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.3s ease;
 }
 
 .theme-menu__list {
@@ -79,12 +81,10 @@ button {
   padding: 0;
   text-transform: uppercase;
   background-color: transparent;
-  transition: transform 0.3s ease;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:focus {
@@ -94,15 +94,17 @@ button {
 
 .theme-menu__button::after {
   content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  opacity: 0.6;
-  background-color: var(--accent-color, #000);
-  transform: scaleX(0);
-  transform-origin: left;
-  block-size: 2px;
+  display: block;
   inline-size: 100%;
+  block-size: 2px;
+  margin-block-start: 1px;
+  background-color: var(--accent-color, #000);
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+  transform-origin: left;
+  transform: scaleX(0);
+  inset-inline-start: 0px;
+  inset-block-start: 15px;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -117,15 +119,14 @@ button {
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  left: -20px;
-  top: 0;
+  inset-inline-start: -1.3rem;
+  inset-block-start: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .theme-menu__button:disabled::before {
-    animation: menu-arrow 0.5s ease-in-out infinite alternate;
-  }
+.theme-menu__button:disabled::before {
+  animation: menu-arrow 0.5s ease-in-out infinite alternate;
 }
+
 
 .main {
   display: flex;
@@ -187,12 +188,13 @@ button {
   flex-direction: column;
   gap: 27px;
   margin: 25px;
+  line-height: 21px;
 }
 
 .card__buttons {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 5px;
   align-self: flex-end;
   margin: 0 25px 25px 0;
 }
@@ -260,11 +262,6 @@ button {
   block-size: 39px;
 }
 
-.button {
-  position: relative;
-  transition: box-shadow 0.3s ease;
-}
-
 .button:focus {
   box-shadow: 2px 2px 0 var(--accent-color, #000);
   outline: none;
@@ -273,19 +270,20 @@ button {
 .button::after {
   content: "";
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
   height: 100%;
   color: var(--bg-color, #fff);
-  background-color: var(--bg-color, #fff);
+  background-color: var(--accent-color, #fff);
   transform: scaleX(0);
   transform-origin: left;
   inline-size: 100%;
+  transition: transform 0.5s ease-in-out; 
   mix-blend-mode: difference;
 }
 
 .button:hover::after {
-  transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
 }
 
@@ -293,26 +291,22 @@ button {
   position: relative;
   font-family: var(--accent-font, fantasy);
   font-size: 14px;
+  vertical-align: middle;
 }
 
 .footer {
-  margin: 54px 0 105px;
+  margin: 0 0 105px;
   background-color: var(--bg-color, #fff);
-  inline-size: clamp(306px, 24vw, 335px);
-  min-block-size: 48px;
 }
 
 .footer__button {
-  display: grid;
-  grid-template-columns: 21px 1fr;
-  align-items: center;
-  gap: 8px;
-  border: 2px solid var(--accent-color, #000);
-  padding: 11.5px 17px;
-  color: var(--accent-color, #000);
-  background-color: transparent;
-  inline-size: 100%;
-  block-size: 51px;
+  background-color: var(--main-color, #fff);
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: var(--section-save-button-direction, column);
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
 .footer__button-img {
@@ -384,27 +378,8 @@ dialog::backdrop {
   cursor: pointer;
 }
 
-@media (min-width: 768px) {
-
-  :root {
-    --content-inline-size: clamp(43.75rem, 52.8571rem + -10.119vw, 100%);
-  }
-
-  .section-save__button {
+@media (min-width: 768px){
+.footer__button {
     --section-save-button-direction: row;
-  }
 }
-
-@media only screen and (orientation: landscape) {
-
-  .page {
-    background-size: auto 100%;
-  }
-}
-
-@media only screen and (orientation: portrait) {
-  
-  .page {
-    background-size: 100% auto;
-  }
 }

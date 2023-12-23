@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./styles/themes.css" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="./images/favicon.svg" sizes="any" />
-    <link rel="apple-touch-icon" href="./images/favicon (1).png" />
+    <link rel="apple-touch-icon" href="./images/favicon(1).png" />
     <script src="./scripts/set-theme.js"></script>
   </head>
   <body class="page">
@@ -73,7 +73,7 @@
           </p>
         </div>
         <div class="card__buttons">
-          <button type="submit" class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@
               />
             </svg>
           </button>
-          <button type="submit" class="card__like-button button">
+          <button type="button" class="card__like-button button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -141,7 +141,7 @@
           </p>
         </div>
         <div class="card__buttons">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +175,7 @@
               />
             </svg>
           </button>
-          <button class="card__like-button button">
+          <button type="button" class="card__like-button button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -205,7 +205,7 @@
           </p>
         </div>
         <div class="card__buttons">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +239,7 @@
               />
             </svg>
           </button>
-          <button class="card__like-button button">
+          <button type="button" class="card__like-button button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -271,7 +271,7 @@
           </p>
         </div>
         <div class="card__buttons">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -305,7 +305,7 @@
               />
             </svg>
           </button>
-          <button class="card__like-button button">
+          <button type="button" class="card__like-button button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -340,7 +340,7 @@
           </p>
         </div>
         <div class="card__buttons">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -374,7 +374,7 @@
               />
             </svg>
           </button>
-          <button class="card__like-button button">
+          <button type="button" class="card__like-button button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -384,6 +384,7 @@
         <div class="card__img-container">
           <picture>
             <img
+              alt="арт фотография с человеком"
               loading="lazy"
               class="card__img grayscale"
               src="./images/3sprint.JPG"
@@ -405,7 +406,7 @@
           </p>
         </div>
         <div class="card__buttons">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -439,7 +440,7 @@
               />
             </svg>
           </button>
-          <button class="card__like-button button">
+          <button type="button" class="card__like-button button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -471,7 +472,7 @@
           </p>
         </div>
         <div class="card__buttons">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -505,7 +506,7 @@
               />
             </svg>
           </button>
-          <button class="card__like-button button">
+          <button type="button" class="card__like-button button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -515,6 +516,7 @@
         <div class="card__img-container">
           <picture>
             <img
+              alt="полнолуние"
               loading="lazy"
               class="card__img invert"
               src="./images/now.JPG"
@@ -537,7 +539,7 @@
           </p>
         </div>
         <div class="card__buttons">
-          <button class="card__icon-button">
+          <button type="button" class="card__icon-button">
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -571,14 +573,13 @@
               />
             </svg>
           </button>
-          <button class="card__like-button button">
+          <button type="button" class="card__like-button button">
             <span class="button__text">Like</span>
           </button>
         </div>
       </article>
     <article class="footer">
     <dialog id="dialog-save">
-      <form class="dialog-form" method="dialog">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="dialog__img"
@@ -587,14 +588,13 @@
           <use href="./svg/floppy(3).svg#floppy" />
         </svg>
         <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
-      </form>
       <form method="dialog">
       <button
         class="dialog__button button"
         type="submit"
         onclick="window['dialog-save'].close()"
       >
-        <span class="ok__button">ок</span>
+        <span class="button__text">ок</span>
       </button>
     </form>
     </dialog>
