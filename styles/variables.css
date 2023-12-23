@@ -1,46 +1,25 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-    --main-font: Inter-Variable;
-    --accent-font: PressStart2P;
-    --main-wght: 400;
-    --h-wght: 700;
-    --content-inline-size: 100%;
-    --bg-color: #fff;
-    --accent-color: #000;
-    --sc-wdth: clamp(375px, 48vw, 796px);
-    --lbl-shadow: #fff;
-    --btn-pseudo-text: #fff;
-    --like-contour: #000;
-    --like-sparks: #ff0000;
-    --like-main: #ff0000;
-    --bg-img: repeating-linear-gradient(
-        -90deg,#d3d3d3 0 2px,rgb(211 211 211 / 0) 2px 4px
-      ),
-      repeating-linear-gradient(#d3d3d3 0 2px, rgb(211 211 211 / 0) 2px 4px),
-      linear-gradient(#e7e7e7 0 0.01%, #1a1a1a);
-  }
+  --main-font-family: "Inter-Variable";
+  --main-font-weight: 400;
+  --accent-font-family: "PressStart2P";
+  --accent-font-weight: 700;
 
-  @media (min-width: 768px) {
+  --text-color: #000000;
+  --page-background-color: #ffffff;
 
-    :root {
-      --content-inline-size: clamp(43.75rem, 52.8571rem + -10.119vw, 100%);
-    }
-  
-    .footer__button {
-      --section-save-button-direction: row;
-    }
-  }
-  
-  @media only screen and (orientation: landscape) {
-  
-    .page {
-      background-size: auto 100%;
-    }
-  }
-  
-  @media only screen and (orientation: portrait) {
-    
-    .page {
-      background-size: 100% auto;
-    }
-  }
+  --button-text-color: #ffffff;
+
+  --heart-contour: #000000;
+  --heart-inside-color: #ff0000;
+
+  --gradient-color: #d3d3d3;
+  --gradient-color-one: #e7e7e7;
+  --gradient-color-two: #1a1a1a;
+  --bg-img: repeating-linear-gradient(90deg,
+      var(--gradient-color, #d3d3d3) 0px 2px,
+      transparent 2px 4px),
+    repeating-linear-gradient(var(--gradient-color, #d3d3d3) 0px 2px,
+      transparent 2px 4px),
+    linear-gradient(var(--gradient-color-one, #e7e7e7) 0.01% var(--gradient-color-two, #1a1a1a));
+}
