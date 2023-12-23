@@ -155,13 +155,13 @@
   font-family: var(--accent-font-family, fantasy);
   font-size: 14px;
   text-transform: uppercase;
+  inset-inline-end: clamp(11px, 0.3794rem + 1.3146vw, 25px);
+  inset-block-start: clamp(23px, 1.3935rem + 0.1878vw, 25px);
+  mix-blend-mode: hard-light;
   text-shadow: -1px 0 var(--page-background-color, #ffffff),
     0 1px var(--page-background-color, #ffffff),
     1px 0 var(--page-background-color, #ffffff),
     0 -1px var(--page-background-color, #ffffff);
-  inset-inline-end: clamp(11px, 0.3794rem + 1.3146vw, 25px);
-  inset-block-start: clamp(23px, 1.3935rem + 0.1878vw, 25px);
-  mix-blend-mode: hard-light;
 }
 
 .card__img {
