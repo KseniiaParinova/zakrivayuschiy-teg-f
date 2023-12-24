@@ -246,6 +246,9 @@
 .button__text {
   color: var(--button-text-color, #ffffff);
   mix-blend-mode: difference;
+}
+
+.button__ok {
   text-transform: uppercase;
 }
 
