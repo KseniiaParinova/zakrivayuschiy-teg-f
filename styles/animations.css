@@ -114,6 +114,6 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .like-icon.is-liked .sparks {
-    animation: chcolor 0.3s 0.3s ease-in alternate;
+    animation: color 0.3s 0.3s ease-in alternate;
   }
 }

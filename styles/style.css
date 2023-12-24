@@ -26,7 +26,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wdth" var(--main-font-weight, 400);
+  font-variation-settings: "wght" var(--main-font-weight, 400);
 }
 
 .header {
@@ -185,6 +185,7 @@
   display: flex;
   flex-direction: column;
   gap: 27px;
+  line-height: 21px;
 }
 
 .card__button {
@@ -220,7 +221,7 @@
   position: relative;
   border: 2px solid var(--text-color, #000000);
   padding-block: 11px;
-  font-family: var(--accent-font-family, "fantasy");
+  font-family: var(--accent-font-family, fantasy);
   font-size: 14px;
   background: var(--page-background-color, #ffffff);
   transition: box-shadow 0.3s ease;
@@ -245,6 +246,7 @@
 .button__text {
   color: var(--button-text-color, #ffffff);
   mix-blend-mode: difference;
+  text-transform: uppercase;
 }
 
 .button:hover::before {
@@ -272,12 +274,15 @@
 }
 
 .button__save {
+  background-color: var(--page-background-color, #fff);
   display: flex;
+  margin: 0 auto; 
+  padding-inline: 20px; 
+  padding-block: 15px;
+  flex-direction: var(--section-save-button-direction, column);
+  justify-content: center;
   align-items: center;
   gap: 8px;
-  margin: 0 auto;
-  padding-inline: 20px;
-  padding-block: 15px;
 }
 
 .dialog-window {
@@ -328,6 +333,12 @@ dialog::backdrop {
   .button__floppy {
     inline-size: 28px;
     block-size: 28px;
+  }
+}
+
+@media (min-width: 768px) {
+  .button__save {
+    --section-save-button-direction: row;
   }
 }
 

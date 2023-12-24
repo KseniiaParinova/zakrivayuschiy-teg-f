@@ -10,8 +10,9 @@
   --heart-contour: #000000;
   --heart-inside-color: #ff0000;
   --gradient-color: #d3d3d3;
-  --gradient-color-one: #e7e7e7;
-  --gradient-color-two: #1a1a1a;
+  --gradient-color-white: #e7e7e7;
+  --gradient-color-black: #1a1a1a;
+  --section-save-button-direction: column;
   --bg-img: repeating-linear-gradient(90deg,
       var(--gradient-color, #d3d3d3) 0px 2px,
       transparent 2px 4px),
